@@ -1,0 +1,3 @@
+rootProject.name = 'QGRNDemo_09_QiChePinPai'
+
+include ':app'
