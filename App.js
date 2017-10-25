@@ -49,14 +49,14 @@ export default class App extends Component<{}> {
 
   render() {
     return (
-        <View style = {{backgroundColor:'#FF1111', flex:1}}>
+        <View>
           <View style = {styles.titleViewStyle}>
-            <Text>
+            <Text style = {{color : '#000000'}}>
               SeeMyGo 品牌
             </Text>
           </View>
 
-          <ListView style = {{backgroundColor:'#CCCCCC'}}
+          <ListView
             dataSource = {this.state.dataSource}
             renderRow = {this.renderRow.bind(this)}
             renderSectionHeader = {this.renderSectionHeader.bind(this)}
@@ -102,7 +102,7 @@ export default class App extends Component<{}> {
           onPress = {(e)=>this.onHeaderPressClick(sectionData)}
         >
           <View style = {styles.sectionStyle}>
-            <Text>
+            <Text style= {{marginLeft : 20}}>
               {sectionData}
             </Text>
           </View>
@@ -141,25 +141,32 @@ export default class App extends Component<{}> {
 
 const styles = StyleSheet.create({
   titleViewStyle:{
-    marginTop:30
+    marginTop:30,
+    alignItems:'center',
   },
 
   rowStyle:{
-    backgroundColor:'red',
+    flexDirection:'row',
+    alignItems : 'center',
+    borderBottomColor : '#EEEEEE',
+    borderBottomWidth : 1,
   },
 
   imageStyle:{
     backgroundColor:'blue',
     width:70,
-    height:70
+    height:70,
+    marginLeft:10,
+    marginTop : 10,
+    marginBottom : 10,
+    borderRadius : 4,
   },
 
   nameStyle:{
-
-    backgroundColor:'green',
+    marginLeft: 10
   },
 
   sectionStyle:{
-
+    backgroundColor:'#EEEEEE',
   }
 });
